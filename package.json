@@ -1,0 +1,24 @@
+{
+  "name": "webcam-stream",
+  "version": "0.0.1",
+  "description": "Stream a webcam feed from ffmpeg over websocket",
+  "main": "websocket-relay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CDR-IxD/webcam-stream.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CDR-IxD/webcam-stream/issues"
+  },
+  "homepage": "https://github.com/CDR-IxD/webcam-stream#readme",
+  "dependencies": {
+    "uglify-js": "^3.1.3",
+    "ws": "^3.2.0"
+  }
+}
