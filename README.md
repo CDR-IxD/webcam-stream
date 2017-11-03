@@ -1,3 +1,10 @@
+# Webcam-Stream
+
+A fork of the JSMpeg project below, with scaffolding and designed to be embedded as a module inside another project.
+
+May run on its own too (untested).
+
+
 # JSMpeg – MPEG1 Video & MP2 Audio Decoder in JavaScript
 
 JSMpeg is a Video Player written in JavaScript. It consists of an MPEG-TS demuxer, MPEG1 video & MP2 audio decoders, WebGL & Canvas2D renderers and WebAudio sound output. JSMpeg can load static videos via Ajax and allows low latency streaming (~50ms) via WebSockets.

@@ -28,7 +28,7 @@ function startWebClientServer(websocket_port) {
   socketServer.on('connection', function(socket, upgradeReq) {
   	socketServer.connectionCount++;
   	console.log(
-  		'New WebSocket Connection: ', 
+  		'PROXY: New WebSocket Connection: ', 
   		(upgradeReq || socket.upgradeReq).socket.remoteAddress,
   		(upgradeReq || socket.upgradeReq).headers['user-agent'],
   		'('+socketServer.connectionCount+' total)'
@@ -66,7 +66,7 @@ function startStreamProxyServer(socketServer, stream_port, record_stream) {
 
   	response.connection.setTimeout(0);
   	console.log(
-  		'Stream Connected: ' + 
+  		'PROXY: Stream Connected: ' + 
   		request.socket.remoteAddress + ':' +
   		request.socket.remotePort
   	);
@@ -77,7 +77,7 @@ function startStreamProxyServer(socketServer, stream_port, record_stream) {
   		}
   	});
   	request.on('end',function(){
-  		console.log('close');
+  		console.log('PROXY: close');
   		if (request.socket.recording) {
   			request.socket.recording.close();
   		}
