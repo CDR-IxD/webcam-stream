@@ -84,12 +84,13 @@ function startStreamProxyServer(socketServer, stream_port, record_stream) {
   	});
 
   	// Record the stream to a local file?
-  	if (record_stream !== false || RECORD_STREAM) {
+  	if (record_stream === true || (record_stream === undefined && RECORD_STREAM)) {
   		var path = 'recordings/' + Date.now() + '.ts';
   		request.socket.recording = fs.createWriteStream(path);
   	}
   }).listen(stream_port || STREAM_PORT);
   console.log('Listening for incomming MPEG-TS Stream on http://127.0.0.1:'+(stream_port || STREAM_PORT)+'/<secret>');
+  return streamServer;
 }
 
 function middleware(req, res, next) {
@@ -105,7 +106,7 @@ module.exports.startStreamProxyServer = startStreamProxyServer;
 module.exports.middleware = middleware;
   
 if (require.name === module) {
-  startWebClientServer();
-  startStreamProxyServer();
+  var ss = startWebClientServer();
+  startStreamProxyServer(ss);
   // no middleware, that's on you!
 }
