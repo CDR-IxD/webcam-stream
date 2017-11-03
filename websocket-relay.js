@@ -58,7 +58,7 @@ function startStreamProxyServer(socketServer, stream_port, record_stream) {
 
   	if (params[0] !== STREAM_SECRET) {
   		console.log(
-  			'Failed Stream Connection: ' + request.socket.remoteAddress + ':' +
+  			'PROXY: Failed Stream Connection: ' + request.socket.remoteAddress + ':' +
   			request.socket.remotePort + ' - wrong secret.'
   		);
   		response.end();
