@@ -98,6 +98,8 @@ function middleware(req, res, next) {
     res.sendFile('view-stream.html', {root: __dirname});
   } else if (req.url === '/jsmpeg.min.js') {
     res.sendFile('jsmpeg.min.js', {root: __dirname});
+  } else {
+    next();
   }
 }
 
