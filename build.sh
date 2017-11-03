@@ -1,5 +1,6 @@
 #!/bin/sh
-uglifyjs \
+
+node_modules/uglify-js/bin/uglifyjs \
 	src/jsmpeg.js \
 	src/video-element.js \
 	src/player.js \
